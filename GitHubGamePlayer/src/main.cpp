@@ -7,9 +7,20 @@
 
 #ifdef _WIN32
 #include <windows.h>
+#include <conio.h>
 #else
 #include <unistd.h>
 #endif
+
+// Function declarations for games
+void snake_game();
+void tetris_game();
+void minesweeper_game();
+void twenty_forty_eight_game();
+void pong_game();
+void pacman_game();
+void chess_game();
+void sudoku_game();
 
 class GamePlayer {
 private:
@@ -53,35 +64,26 @@ public:
         std::cout << "Initializing game engine...\n";
         std::cout << "Starting game loop...\n";
         
-        // In a real implementation, this would launch the actual game
-        // For now, we'll simulate by calling appropriate executables
+        // Call the actual game functions
         if (gameName == "snake") {
-            std::cout << "Playing Snake game...\n";
-            // system("python games/snake/snake.py");
+            snake_game();
         } else if (gameName == "tetris") {
-            std::cout << "Playing Tetris game...\n";
-            // system("node games/tetris/tetris.js");
+            tetris_game();
         } else if (gameName == "minesweeper") {
-            std::cout << "Playing Minesweeper game...\n";
-            // system("./games/minesweeper/minesweeper");
+            minesweeper_game();
         } else if (gameName == "2048") {
-            std::cout << "Playing 2048 game...\n";
-            // system("start games/2048/index.html");
+            twenty_forty_eight_game();
         } else if (gameName == "pong") {
-            std::cout << "Playing Pong game...\n";
-            // system("python games/pong/pong.py");
+            pong_game();
         } else if (gameName == "pacman") {
-            std::cout << "Playing Pacman game...\n";
-            // system("node games/pacman/pacman.js");
+            pacman_game();
         } else if (gameName == "chess") {
-            std::cout << "Playing Chess game...\n";
-            // system("python games/chess/chess.py");
+            chess_game();
         } else if (gameName == "sudoku") {
-            std::cout << "Playing Sudoku game...\n";
-            // system("node games/sudoku/sudoku.js");
+            sudoku_game();
         }
         
-        std::cout << "Game launched successfully! Enjoy playing " << games[gameName] << "\n";
+        std::cout << "\nThanks for playing " << games[gameName] << "!\n";
     }
     
     void run() {
