@@ -22,7 +22,9 @@ This directory contains enhanced launch scripts that automatically handle the in
 3. If g++ is not found, attempts to install via:
    - Chocolatey (if available) - installs mingw or tdm-gcc
    - Winget (if available) - installs winlibs.mingw-w64
-   - Provides manual installation instructions if automatic methods fail
+   - Scoop (if available) - installs mingw
+   - Offline installer download and extraction (using PowerShell and 7-Zip)
+   - Provides manual installation instructions if all automatic methods fail
 4. Compiles the application
 5. Runs the executable
 
