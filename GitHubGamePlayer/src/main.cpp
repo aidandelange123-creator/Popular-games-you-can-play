@@ -4,6 +4,7 @@
 #include <map>
 #include <cstdlib>
 #include <ctime>
+#include <cstdlib>
 
 #ifdef _WIN32
 #include <windows.h>
@@ -21,6 +22,18 @@ void pong_game();
 void pacman_game();
 void chess_game();
 void sudoku_game();
+void tictactoe_game();
+void spaceinvaders_game();
+void breakout_game();
+
+// Function to execute Python script
+void run_python_game(const std::string& script_path) {
+    std::string command = "python3 " + script_path;
+    int result = std::system(command.c_str());
+    if (result != 0) {
+        std::cout << "Error running game. Make sure Python3 is installed and the script exists." << std::endl;
+    }
+}
 
 class GamePlayer {
 private:
@@ -37,6 +50,9 @@ public:
         games["pacman"] = "JavaScript Pacman";
         games["chess"] = "Python Chess";
         games["sudoku"] = "JavaScript Sudoku";
+        games["tictactoe"] = "Python Tic Tac Toe";
+        games["spaceinvaders"] = "Python Space Invaders";
+        games["breakout"] = "Python Breakout";
     }
     
     void displayMenu() {
@@ -81,6 +97,12 @@ public:
             chess_game();
         } else if (gameName == "sudoku") {
             sudoku_game();
+        } else if (gameName == "tictactoe") {
+            tictactoe_game();
+        } else if (gameName == "spaceinvaders") {
+            spaceinvaders_game();
+        } else if (gameName == "breakout") {
+            breakout_game();
         }
         
         std::cout << "\nThanks for playing " << games[gameName] << "!\n";
@@ -123,4 +145,55 @@ int main() {
     GamePlayer player;
     player.run();
     return 0;
+}
+
+// Game implementations
+void snake_game() {
+    run_python_game("games/snake/snake.py");
+}
+
+void tetris_game() {
+    // Note: Tetris is implemented in JavaScript, would need a web browser to run
+    std::cout << "Tetris game runs in a web browser. Opening the game file..." << std::endl;
+    std::cout << "Please open games/tetris/tetris.js in a browser or a JavaScript environment." << std::endl;
+}
+
+void minesweeper_game() {
+    // Note: Minesweeper is implemented in C++, but we're simulating it here
+    std::cout << "Minesweeper game implemented in C++. Would be compiled and run separately." << std::endl;
+}
+
+void twenty_forty_eight_game() {
+    std::cout << "2048 game runs in a web browser. Opening the game file..." << std::endl;
+    std::cout << "Please open games/2048/index.html in a browser." << std::endl;
+}
+
+void pong_game() {
+    run_python_game("games/pong/pong.py");
+}
+
+void pacman_game() {
+    std::cout << "Pacman game runs in a web browser. Opening the game file..." << std::endl;
+    std::cout << "Please open games/pacman/pacman.js in a browser or a JavaScript environment." << std::endl;
+}
+
+void chess_game() {
+    run_python_game("games/chess/chess.py");
+}
+
+void sudoku_game() {
+    std::cout << "Sudoku game runs in a web browser. Opening the game file..." << std::endl;
+    std::cout << "Please open games/sudoku/sudoku.js in a browser or a JavaScript environment." << std::endl;
+}
+
+void tictactoe_game() {
+    run_python_game("games/tictactoe/tictactoe.py");
+}
+
+void spaceinvaders_game() {
+    run_python_game("games/spaceinvaders/spaceinvaders.py");
+}
+
+void breakout_game() {
+    run_python_game("games/breakout/breakout.py");
 }

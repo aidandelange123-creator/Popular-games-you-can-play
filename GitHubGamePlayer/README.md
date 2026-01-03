@@ -26,6 +26,9 @@ Now available in both C++ and .NET versions!
 - Pacman
 - Chess
 - Sudoku
+- Tic Tac Toe
+- Space Invaders
+- Breakout
 
 ## How to Run
 ### Option 1: .NET Version (New Recommended)
@@ -59,7 +62,10 @@ GitHubGamePlayer/
 │   ├── pong/
 │   ├── pacman/
 │   ├── chess/
-│   └── sudoku/
+│   ├── sudoku/
+│   ├── tictactoe/
+│   ├── spaceinvaders/
+│   └── breakout/
 ├── launch.bat
 ├── README.md
 └── CMakeLists.txt
